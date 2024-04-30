@@ -14,14 +14,14 @@ async def on_chat_start():
     elements = [
     cl.Image(name="image1", display="inline", path="groq.jpeg")
     ]
-    await cl.Message(content="Hello there, I am Groq. How can I help you ?", elements=elements).send()
+    await cl.Message(content="Hello there, I am Groq. How can I help you?", elements=elements).send()
 
     model = ChatGroq(temperature=0,model_name="mixtral-8x7b-32768")
     prompt = ChatPromptTemplate.from_messages(
         [
             (
                 "system",
-                "You're a very knowledgeable Machine Learning Engineer.",
+                "You're a knowledgeable Machine Learning Engineer.",
             ),
             ("human", "{question}"),
         ]
